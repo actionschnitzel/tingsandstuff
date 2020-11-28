@@ -1,0 +1,2 @@
+cp pigro.desktop  ~/Desktop
+cp pigro.desktop ~/.local/share/applications/
