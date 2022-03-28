@@ -1,4 +1,4 @@
-echo '                                                                     
+print '                                                                     
     ____  _ ______              ____           __        ____         
    / __ \(_) ____/________     /  _/___  _____/ /_____ _/ / /__  _____
   / /_/ / / / __/ ___/ __ \    / // __ \/ ___/ __/ __ `/ / / _ \/ ___/
@@ -6,7 +6,12 @@ echo '
 /_/   /_/\____/_/   \____/  /___/_/ /_/____/\__/\__,_/_/_/\___/_/     
                                                                       '
 
-print "I now install dependencies"
+YELLOW='\033[0;33m'
+GREEN='\033[0;32m'
+RED='\033[0;31m'
+NC='\033[0m' # No Color
+
+printf "${GREEN}I now install dependencies${NC}\n\n"
 
 sudo apt-get install xterm python3-pil python3-pil.imagetk python3-pip mpg123 lolcat -y
 
@@ -17,12 +22,17 @@ clear
 
 
 
-
-print "[UPDATE] I will install the newest version." 
-rm -rf $HOME/PiGro-Aid-
-git clone -b April_Fix https://github.com/actionschnitzel/PiGro-Aid-.git
-cd PiGro-Aid-
-
+if [ -d "$HOME/PiGro-Aid-" ] 
+then
+    printf "${YELLOW}[UPDATE]${NC}I will install the newest version.\n\n" 
+    rm -rf $HOME/PiGro-Aid-
+    git clone https://github.com/actionschnitzel/PiGro-Aid-.git
+    cd PiGro-Aid-
+else
+    printf "${YELLOW}[NEW INSTALL]${NC}I will now install PiGro\n\n"
+    git clone https://github.com/actionschnitzel/PiGro-Aid-.git
+    cd PiGro-Aid-
+fi
 
 clear
 
@@ -47,4 +57,4 @@ echo  '
 ||__|||__|||__|||__|||_______|||__||
 |/__\|/__\|/__\|/__\|/_______\|/__\|'
 
-print "You can close this window now"
+printf "\n${GREEN}You can close this window now\n${NC}"
