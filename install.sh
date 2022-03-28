@@ -11,7 +11,7 @@ GREEN='\033[0;32m'
 RED='\033[0;31m'
 NC='\033[0m' # No Color
 
-printf "${GREEN}I now install dependencies${NC}"
+print f"${GREEN}I now install dependencies${NC}"
 
 sudo apt-get install xterm python3-pil python3-pil.imagetk python3-pip mpg123 lolcat -y
 
@@ -24,12 +24,12 @@ clear
 
 if [ -d "$HOME/PiGro-Aid-" ] 
 then
-    printf "${YELLOW}[UPDATE]${NC}I will install the newest version." 
+    print f"${YELLOW}[UPDATE]${NC}I will install the newest version." 
     rm -rf $HOME/PiGro-Aid-
     git clone -b April_Fix https://github.com/actionschnitzel/PiGro-Aid-.git
     cd PiGro-Aid-
 else
-    printf "${YELLOW}[NEW INSTALL]${NC}I will now install PiGro"
+    print f"${YELLOW}[NEW INSTALL]${NC}I will now install PiGro"
     git clone -b April_Fix https://github.com/actionschnitzel/PiGro-Aid-.git
     cd PiGro-Aid-
 fi
@@ -57,4 +57,4 @@ echo  '
 ||__|||__|||__|||__|||_______|||__||
 |/__\|/__\|/__\|/__\|/_______\|/__\|'
 
-printf "${GREEN}You can close this window now${NC}"
+print f"${GREEN}You can close this window now${NC}"
