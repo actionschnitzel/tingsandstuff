@@ -16,20 +16,10 @@ pip3 install psutil distro
 
 clear
 
-
-
-
-if [ -d "$HOME/PiGro-Aid-" ] 
-then
-    print "[UPDATE] I will install the newest version.\n\n" 
-    rm -rf $HOME/PiGro-Aid-
-    git clone -b April_Fix https://github.com/actionschnitzel/PiGro-Aid-.git
-    cd PiGro-Aid-
-else
-    print "[NEW INSTALL] I will now install PiGro\n\n"
-    git clone -b April_Fix https://github.com/actionschnitzel/PiGro-Aid-.git
-    cd PiGro-Aid-
-fi
+print "I will install the newest version.\n\n" 
+rm -rf $HOME/PiGro-Aid-
+git clone -b April_Fix https://github.com/actionschnitzel/PiGro-Aid-.git
+cd PiGro-Aid-
 
 clear
 
